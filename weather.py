@@ -15,9 +15,11 @@ def get_data(city, day):
 
 
 st.title("Weather Forecast")
-place = st.text_input("Enter City")
-days = st.slider("Forecast Days", min_value=1, max_value=5, help="Select the number of forecast days")
-option = st.selectbox("Select data to view", ("Temperature", "Humidity"))
+with st.sidebar:
+    place = st.text_input("Enter City")
+    days = st.slider("Forecast Days", min_value=1, max_value=5, help="Select the number of forecast days")
+    option = st.selectbox("Select data to view", ("Temperature", "Humidity", "Wind"))
+
 st.subheader(f"{option} for the next {days} days in {place}")
 
 if place:
@@ -37,6 +39,13 @@ if place:
             dates = [dict["dt_txt"] for dict in filtered_data]
             # Create humidity plot
             figure = px.line(x=dates, y=humidity, labels={"x": "Date", "y": "Humidity (%)"})
+            st.plotly_chart(figure)
+
+        if option == "Wind":
+            rain = [dict["wind"]["speed"] for dict in filtered_data]
+            dates = [dict["dt_txt"] for dict in filtered_data]
+            # Create rain plot
+            figure = px.line(x=dates, y=rain, labels={"x": "Date", "y": "Wind speed (km/h)"})
             st.plotly_chart(figure)
 
     except KeyError:
