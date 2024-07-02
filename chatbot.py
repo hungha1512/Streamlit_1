@@ -29,6 +29,7 @@ if "messages" not in st.session_state:
     ]
 
 # Streamlit app layout
+st.set_page_config(page_title="Chatbot nghịch nghịch", layout="wide")
 st.title("Chatbot nghịch nghịch")
 
 user_input = st.text_input("What would you like to ask")

@@ -43,6 +43,7 @@ m = folium.Map(location=[14.0583, 108.2772], zoom_start=6)
 HeatMap(locations).add_to(m)
 
 # Display the heatmap in Streamlit
+st.set_page_config(page_title="Vietnam City Population Heatmap", layout="wide")
 st.title("Vietnam City Population Heatmap")
 st_folium(m, width=700, height=500)
 

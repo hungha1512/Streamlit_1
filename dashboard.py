@@ -15,6 +15,7 @@ def get_data() -> pd.DataFrame:
 df = get_data()
 
 # Title
+st.set_page_config(page_title="Live Bank Data", layout="wide")
 st.title("Live Bank Data")
 
 # Top level filters

@@ -14,6 +14,7 @@ def get_data(city, day):
     return filtered_data
 
 
+st.set_page_config(page_title="Weather Forecast", layout="wide")
 st.title("Weather Forecast")
 with st.sidebar:
     place = st.text_input("Enter City")
