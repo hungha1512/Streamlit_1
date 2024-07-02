@@ -59,17 +59,25 @@ chatbot = st.Page(
     icon="💬"
 )
 
+live_dashboard = st.Page(
+    "dashboard.py",
+    title="Live Dashboard",
+    icon="🏦"
+
+)
+
 map_page = [map, heatmap]
 weather_page = [weather]
 pdf = [simplified_pdf]
 chatbot = [chatbot]
-
+live_dashboard = [live_dashboard]
 
 page_dict = {}
 page_dict["Bản đồ"] = map_page
 page_dict["Dự báo thời tiết"] = weather_page
 page_dict["Học tập"] = pdf
 page_dict["Trò chuyện với máy"] = chatbot
+page_dict["Hệ thống"] = live_dashboard
 
 pg = st.navigation(page_dict)
 pg.run()
