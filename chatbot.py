@@ -49,5 +49,4 @@ for message in reversed(st.session_state.messages):
     if message["role"] == "user":
         st.write(f"User: {message['content']}")
     else:
-        st.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         st.write(f"Chatbot: {message['content']}")
