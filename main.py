@@ -53,15 +53,23 @@ simplified_pdf = st.Page(
     icon="📰"
 )
 
+chatbot = st.Page(
+    "chatbot.py",
+    title="Chatbot nghịch",
+    icon="💬"
+)
+
 map_page = [map, heatmap]
 weather_page = [weather]
 pdf = [simplified_pdf]
+chatbot = [chatbot]
 
 
 page_dict = {}
 page_dict["Bản đồ"] = map_page
 page_dict["Dự báo thời tiết"] = weather_page
 page_dict["Học tập"] = pdf
+page_dict["Trò chuyện với máy"] = chatbot
 
 pg = st.navigation(page_dict)
 pg.run()
