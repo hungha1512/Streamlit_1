@@ -6,6 +6,10 @@ import plotly.express as px  # interactive charts
 
 dataset_url = "https://raw.githubusercontent.com/Lexie88rus/bank-marketing-analysis/master/bank.csv"
 
+# Title
+st.set_page_config(page_title="Live Bank Data", layout="wide")
+st.title("Live Bank Data")
+
 
 @st.cache_data
 def get_data() -> pd.DataFrame:
@@ -13,10 +17,6 @@ def get_data() -> pd.DataFrame:
 
 
 df = get_data()
-
-# Title
-st.set_page_config(page_title="Live Bank Data", layout="wide")
-st.title("Live Bank Data")
 
 # Top level filters
 job_filter = st.selectbox("Select the job", pd.unique(df["job"]))
